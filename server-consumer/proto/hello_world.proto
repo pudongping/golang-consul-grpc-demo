@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "./;proto";
+
+service Say {
+  rpc Hi(HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  uint32 code = 1;
+  string msg = 2;
+  string data = 3;
+}
